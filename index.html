@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Advance Counter App</title>
+</head>
+
+<body>
+    <div class="w-full h-screen flex flex-col justify-center ">
+        <h1 class="font-inter font-normal text-[36px] leading-[100%] mb-[43px] text-[#808080] text-center">Advance
+            Counter app</h1>
+        <div
+            class="rounded-[20px] mx-auto shadow-[0px_11px_44px_-10px_#00000040] w-[460px] h-[304px] pt-[57px] px-22 pb-[34px]">
+            <p class="count font-normal mb-9 text-center text-[36px] leading-[44px]">0</p>
+            <div class="btn flex gap-2 mb-9">
+                <button onclick="addOne()" type="button"
+                    class="w-[138px] hover:bg-[#128DFF] hover:text-white transition-transform duration-400 h-[45px] text-[#128DFF] cursor-pointer border border-[#128DFF]">Add
+                    One</button>
+                <button onclick="save()"
+                    class="w-[138px] h-[45px] text-white cursor-pointer border bg-gradient-to-r from-[#128DFF] to-[#1444EF]">save
+                </button>
+            </div>
+            <p class="text-center mb-3.5 leading-[19px] text-[#808080]">Previous values</p>
+            <p class="preValue text-[16px] font-normal leading-[19px] text-center"></p>
+        </div>
+    </div>
+    <script>
+        const count = document.querySelector(".count");
+        const preValue = document.querySelector(".preValue")
+        let Number = 0;
+        function addOne() {
+            Number += 1;
+            count.innerText = Number;
+        }
+        function save() {
+            preValue.innerText += Number + ",";
+            Number = 0;
+            count.innerText = Number;
+        }
+
+    </script>
+</body>
+
+</html>
